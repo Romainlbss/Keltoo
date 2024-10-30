@@ -1,0 +1,77 @@
+@page "/"
+@using Components.Class
+@using Components.Modals
+@using Blazored.Modal
+@using Blazored.Modal.Services
+@inject IModalService Modal
+
+<body>
+    <h1>Séance du jour</h1>
+    <div class="widget-full">
+        <div id="start">
+            <h2>Bench Squat</h2>
+            <button>Start</button>
+        </div>
+        <div class="progression">
+            <progress value="50" max="100"></progress>
+            <label>60%</label>
+        </div>
+    </div>
+    <h1>Séances à venir</h1>
+    <div class="next-workouts">
+        <div>
+            <h2>Pec Dos</h2>
+            <label>Lundi 26/09</label>
+            <label>Pipi caca prout</label>
+        </div>
+        <div>
+            <h2>Pec Dos</h2>
+            <label>Lundi 26/09</label>
+            <label>Pipi caca prout</label>
+        </div>
+    </div>
+</body>
+
+@code 
+{
+    public List<Utilisateur> utilisateurs = new List<Utilisateur>();
+    bool isAjouter = false;
+
+    private async Task AjouterUtilisateur()
+    {
+        try
+        {
+            Utilisateur utilisateur = new Utilisateur("Caca", "Pipi", "CacaPipi", "images/profile_picture.jpg", "cacapipi@gmail.com", "Motdepasse");
+            Utilisateur.InsertUtilisateurs(utilisateur);
+            utilisateurs = await Utilisateur.GetUtilisateurs();
+        }
+        catch(Exception ex)
+        {
+            Global.ShowError(ex.Message, Modal);
+        }
+    }
+    private async Task SupprimerUtilisateur(Utilisateur utilisateur)
+    {
+        try
+        {
+            Utilisateur.DeleteUtilisateurs(utilisateur);
+            utilisateurs = await Utilisateur.GetUtilisateurs();
+        }
+        catch(Exception ex)
+        {
+            Global.ShowError(ex.Message, Modal);
+        }
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            utilisateurs = await Utilisateur.GetUtilisateurs();
+        }
+        catch(Exception ex)
+        {
+            Global.ShowError(ex.Message, Modal);
+        }
+    }
+}
+

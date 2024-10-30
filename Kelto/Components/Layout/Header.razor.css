@@ -1,0 +1,58 @@
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 85px;
+    width: 100%;
+    background-color: #1D262F;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profil
+{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+    .profil > img
+    {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    .profil > label
+    {
+        color: #F7FFF7;
+        font-size: 20px;
+    }
+
+.streak
+{
+    background-color: #29343F;
+    width: 75px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+    .streak > label 
+    {
+        color: #F1C40F;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .streak > i
+    {
+        color: #F1C40F;
+        font-size: 28px;
+    }

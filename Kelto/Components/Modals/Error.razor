@@ -1,0 +1,13 @@
+@page "/Erreur"
+
+<h1>Erreur</h1>
+@if(message != null)
+{
+    <label>@message</label>
+}
+
+@code
+{
+    [Parameter]
+    public string? message {get; set;}
+}

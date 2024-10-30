@@ -1,0 +1,75 @@
+
+
+.utilisateurs
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-full
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    background-color: #29343F;
+    border-radius: 15px;
+    row-gap: 15px;
+}
+
+#start
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#start > button
+{
+    width: 70px;
+    height: 30px;
+    background-color: #F1C40F;
+    border-radius: 15px;
+    border: none;
+    color: #1A222B;
+}
+
+.progression
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+progress {
+    width: 85%;       
+    height: 8px;       
+    -webkit-appearance: none; 
+    appearance: none;   
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: #F7FFF7;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: #58B19F;
+    border-radius: 4px;
+    transition: width 0.3s ease; 
+  }
+
+.next-workouts
+{
+    overflow-x: scroll;
+    display: flex;
+    column-gap: 15px;
+}
+
+.next-workout > div
+{
+    padding: 15px;
+    background-color:aqua;
+    border-radius: 15px;
+    width: 70%;
+}

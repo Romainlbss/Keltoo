@@ -1,0 +1,13 @@
+﻿@inherits LayoutComponentBase
+@using Blazored.Modal
+
+<div class="page-layout">
+    <Header />
+    <NavMenu />
+    <main>
+        @Body
+        <CascadingBlazoredModal>
+        </CascadingBlazoredModal>
+    </main>
+</div>
+
